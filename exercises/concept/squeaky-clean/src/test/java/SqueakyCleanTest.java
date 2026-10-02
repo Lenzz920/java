@@ -48,6 +48,14 @@ public class SqueakyCleanTest {
         assertThat(SqueakyClean.clean("a-bc")).isEqualTo("aBc");
     }
 
+    //I'm proposing to add a test that has 2 - one after the other. The reason is that my first solution would check for the dash one, and if the next char was a - again, it would not make b to upper case.
+    @Test
+    @Tag("task:2")
+    @DisplayName("The clean method converts kebab to camel case after removing a dash")
+    public void kebabToCamelCase() {
+        assertThat(SqueakyClean.clean("a--bc")).isEqualTo("aBc");
+    }
+
     @Test
     @Tag("task:2")
     @DisplayName("The clean method returns a string in camel case after removing a dash and replaces a whitespace")
